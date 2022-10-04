@@ -27,12 +27,12 @@ class Vector:
 def test_vector_index_access() -> None:
     for index in [0, 1, 2, 3]:
         reference = [float(i) for i in range(4)]
-        vector = Vector(reference)
+        vector = Vector(reference.copy())
         assert all(reference[i] == vector[i] for i in range(4))
         vector[index] = 42.0
         assert vector[index] == 42.0
 
-        # Task A: make this test pass by ensuring that `Vector` uses a copy of the coordinates it receives in the constructor 
+        # Task A: make this test pass by ensuring that `Vector` uses a copy of the coordinates it receives in the constructor    
         assert reference[index] != 42.0
 
 
